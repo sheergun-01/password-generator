@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ced3d8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    color: #777;
+}
+.container{
+    position: absolute;
+    top: 60px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: rgba(0, 0, 255, 0.7);
+    animation: moveInTop 1s ease-out;
+}
+.specification{
+    display: flex;
+    background-color:white;
+    margin-bottom: 3px;
+    padding: 15px;
+    width: 400px;
+    justify-content: space-between;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus{
+    outline: none;
+}
+#length{
+    width: 35px;
+    color: #777;
+    outline-color: rgba(0, 0, 255, 0.7);
+}
+
+.specifications{
+    margin-bottom: 25px;
+    color: #777;
+}
+.button-class{
+    text-align: center;
+}
+.button{
+    padding: 15px 40px;
+    display: inline-block;
+    background-color: rgba(0, 0, 255, 0.5);
+    border-radius: 100px;
+    border: none;
+    color: white;
+    margin-bottom: 30px;
+    animation: moveInLeft 1s ease-out;
+    position: relative;
+}
+.button:focus{
+    outline: none;
+}
+.button:hover{
+    transform: translateY(-3px);
+}
+.button:active{
+    transform: translateY(-1px);
+}
+.button::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 255, 0.5);
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    transition: all .3s;
+}
+.button:hover::after{
+    background-color: rgba(0, 0, 255);
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.result-container{
+    background-color: white;
+    height: 70px;
+    position: relative;
+    padding: 5px;
+    text-align: center;
+}
+
+
+@keyframes moveInTop{
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes moveInLeft{
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.copy{
+    position: absolute;
+    left: 90%;
+}
+.password{
+    position: absolute;
+    left: 0;
+}
